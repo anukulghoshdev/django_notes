@@ -23,15 +23,16 @@ Album.objects.filter(artist_id=1)
 
 
 
-
+instructions----->
+-------------------
 
 
 ctrl c
-cls -> clear cmd 
+cls -> clear cmd
 from django.http import HttpResponse
-from First_App import views 
+from First_App import views
 
-from django.urls.conf import include 
+from django.urls.conf import include
 
 path('First_App/', include('First_App.urls')),
 
@@ -99,12 +100,12 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydatabase',
-        'USER': 'mydatabaseuser',
-        'PASSWORD': 'mypassword',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dbname',
+        'USER': 'root',
+        'PASSWORD': '',
         'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'PORT': '3306',
     }
 }
 
@@ -130,7 +131,7 @@ MEDIA_URL = '/media/'
 LOGIN_URL = '/login/'
 
 
-in app er urls.py 
+in app er urls.py
 from django.conf.urls import url
 from django.conf import settings
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
@@ -152,7 +153,7 @@ from myapp1.models import Musician, Album
 admin.site.register(Musician)
 admin.site.register(Album)
 
-python manage.py createsuperuser 
+python manage.py createsuperuser
 
 
 view file e abr model er name import korte hbe
@@ -219,5 +220,3 @@ Django==2.2.4
 Pillow==6.2.1
 back main cd..
 pip install -r requirements.txt
-
-
