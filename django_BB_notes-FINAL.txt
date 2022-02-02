@@ -1,0 +1,223 @@
+==============================================================================
+SQL Query:
+SELECT * FROM Musician
+
+Django Model Query:
+Musician.objects.all()
+-------------------------------------------------------------------------------
+SQL Query:
+SELECT * FROM Musician WHERE id=1
+
+Django Model Query:
+Musician.objects.get(pk=1)
+
+-------------------------------------------------------------------------------
+SQL Query:
+SELECT * FROM Album WHERE artist_id=1
+
+Django Model Query:
+Album.objects.filter(artist_id=1)
+-------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+ctrl c
+cls -> clear cmd 
+from django.http import HttpResponse
+from First_App import views 
+
+from django.urls.conf import include 
+
+path('First_App/', include('First_App.urls')),
+
+from django.conf import url
+from django.urls import path
+from First_App import views
+
+"/" -> home or same as http://127.0.0.1:8000/
+"/First_App/"
+
+
+
+
+
+
+
+
+
+
+pip install django
+pip list
+
+django-admin startproject projectName
+python manage.py runserver
+python manage.py runserver 7000 -> change port
+python manage.py startapp appName
+
+
+
+
+
+-----------------------------------------------------------
+install this pip packages-->
+django
+pillow
+mysqlclient
+virtualenv
+django-crispy-forms
+
+-----------------------------------------------------------
+
+
+
+
+django-admin startproject mysite
+
+python manage.py runserver
+python manage.py runserver 7000 -> change port
+
+py manage.py startapp polls
+
+
+
+
+=============================Fixed For every project Settings.py=====================================***********************
+from pathlib import Path, os
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+
+'DIRS': [TEMPLATE_DIR],
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydatabase',
+        'USER': 'mydatabaseuser',
+        'PASSWORD': 'mypassword',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
+
+
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
+
+
+
+# MEDIA
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = '/media/'
+
+
+# Login
+LOGIN_URL = '/login/'
+
+
+in app er urls.py 
+from django.conf.urls import url
+from django.conf import settings
+from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+======================================================
+
+
+python manage.py migrate
+python manage.py makemigrations app_name
+python manage.py migrate
+
+
+from myapp1.models import Musician, Album
+
+# Register your models here.
+admin.site.register(Musician)
+admin.site.register(Album)
+
+python manage.py createsuperuser 
+
+
+view file e abr model er name import korte hbe
+
+{{}} -> variable/ value
+{%%} -> if else/ loop---logical kichu/ image
+
+
+forms.py -> from django import forms
+views.py -> from myapp1 import forms
+
+forms.py -> widget = forms.TextInput(attrs={'placeholder':'Enter your full name'}
+
+{% csrf_token %}
+
+from django.core import validators
+
+
+pip install mysqlclient
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dbname',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+    }
+}
+
+
+from django.contrib.auth.models import User
+
+
+
+
+
+
+
+
+
+query->
+Modelname.objects.all().order_by('col_name')
+
+
+virtual env
+------------------->for atom
+python -m venv envname
+cd Scripts
+activate/ deactivate
+
+
+pip install virtualenv
+python -m venv vename
+cd Scripts
+\activate
+deactivate
+pip list
+pip install django==2.2.5
+create new file in main ve file 'requirements.txt'
+Django==2.2.4
+Pillow==6.2.1
+back main cd..
+pip install -r requirements.txt
+
+
